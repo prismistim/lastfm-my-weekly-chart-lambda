@@ -1,4 +1,5 @@
 {
-  "name": "lastfm-weekly-chart",
+  "private": true,
+  "name": "lastfm-my-weekly-chart-lambda",
   "packageManager": "yarn@3.5.1"
 }

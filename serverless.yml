@@ -1,18 +1,22 @@
 service: lastfm-weekly-chart
 frameworkVersion: '3'
-
 provider:
   name: aws
   runtime: nodejs18.x
-
 functions:
-  rateHandler:
-    handler: index.run
-    events:
-      # Invoke Lambda function every minute
-      - schedule: rate(1 minute)
   cronHandler:
-    handler: index.run
+    handler: index.handler
     events:
       # Invoke Lambda function every 2nd minute from Mon-Fri
-      - schedule: cron(0/2 * ? * MON-FRI *)
+      - schedule: cron(0 0 ? * 2 *)
+    environment:
+      LF_API_KEY: 71d834ee73bc545298b3d24e14c59fbb
+      MISSKEY_TOKEN: uM4wq0PaaDgmyjOTIoyDxmLOnumDzPhr
+custom:
+  esbuild:
+    bundle: true
+    minify: false
+    target: node18
+    platform: node
+plugins:
+  - serverless-esbuild

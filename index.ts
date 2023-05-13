@@ -37,7 +37,7 @@ export const handler = async () => {
   })
 
   await cli.request('notes/create', {
-    visibility: 'home',
+    visibility: 'public',
     text: postDescriptions + '\n#lastfm',
   })
 }

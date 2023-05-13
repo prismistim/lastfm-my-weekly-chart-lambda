@@ -800,7 +800,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chalk@npm:^4.0.0":
+"chalk@npm:^4.0.0, chalk@npm:^4.1.2":
   version: 4.1.2
   resolution: "chalk@npm:4.1.2"
   dependencies:
@@ -1015,6 +1015,13 @@ __metadata:
   dependencies:
     esutils: ^2.0.2
   checksum: fd7673ca77fe26cd5cba38d816bc72d641f500f1f9b25b83e8ce28827fe2da7ad583a8da26ab6af85f834138cf8dae9f69b0cd6ab925f52ddab1754db44d99ce
+  languageName: node
+  linkType: hard
+
+"dotenv-expand@npm:^10.0.0":
+  version: 10.0.0
+  resolution: "dotenv-expand@npm:10.0.0"
+  checksum: 2a38b470efe0abcb1ac8490421a55e1d764dc9440fd220942bce40965074f3fb00b585f4346020cb0f0f219966ee6b4ee5023458b3e2953fe5b3214de1b314ee
   languageName: node
   linkType: hard
 
@@ -1860,6 +1867,7 @@ __metadata:
     eslint: ^8.40.0
     eslint-config-prettier: ^8.8.0
     misskey-js: ^0.0.15
+    serverless-dotenv-plugin: ^6.0.0
     serverless-esbuild: ^1.44.0
     ts-node: ^10.9.1
     typescript: ^5.0.4
@@ -2517,6 +2525,19 @@ __metadata:
   bin:
     semver: bin/semver.js
   checksum: d16dbedad53c65b086f79524b9ef766bf38670b2395bdad5c957f824dcc566b624988013564f4812bcace3f9d405355c3635e2007396a39d1bffc71cfec4a2fc
+  languageName: node
+  linkType: hard
+
+"serverless-dotenv-plugin@npm:^6.0.0":
+  version: 6.0.0
+  resolution: "serverless-dotenv-plugin@npm:6.0.0"
+  dependencies:
+    chalk: ^4.1.2
+    dotenv: ^16.0.3
+    dotenv-expand: ^10.0.0
+  peerDependencies:
+    serverless: "*"
+  checksum: 99972460c8e234ebc77d78f9808e0c9748e5e9024d6dfc2d176e91df7ee376d94cfad5e1159f42e1add6dda85cbf10aa590e05c6ac851a7bfb51830c3e15f1e5
   languageName: node
   linkType: hard
 

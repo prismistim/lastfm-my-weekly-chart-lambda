@@ -17,6 +17,7 @@
     "eslint": "^8.40.0",
     "eslint-config-prettier": "^8.8.0",
     "misskey-js": "^0.0.15",
+    "serverless-dotenv-plugin": "^6.0.0",
     "serverless-esbuild": "^1.44.0",
     "ts-node": "^10.9.1",
     "typescript": "^5.0.4"

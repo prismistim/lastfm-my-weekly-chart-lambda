@@ -19,17 +19,17 @@ export const handler = async () => {
   }
 
   const targetTracks = resJson.weeklytrackchart.track.filter(
-    (track) => parseInt(track['@attr'].rank) < 4
+    (track) => parseInt(track['@attr'].rank) < 6
   ).sort((a, b) => parseInt(a['@attr'].rank) - parseInt(b['@attr'].rank))
 
-  let postDescriptions = 'MyWeeklyBestTrack\n'
+  let postDescriptions = ''
 
   targetTracks.forEach((track, index) => {
     if (index !== 0) postDescriptions += '\n'
     postDescriptions += `${track['@attr'].rank}: ${track.artist['#text']} - ${track.name} (${track.playcount})`
   })
 
-  console.log(postDescriptions)
+  postDescriptions += '\n[last.fm/Prismist-M](https://last.fm/Prismist-M)\n#my_weekly_best_tracks #lastfm'
 
   const cli = new misskeyApi.APIClient({
     origin: 'https://misskey.io',
@@ -38,6 +38,6 @@ export const handler = async () => {
 
   await cli.request('notes/create', {
     visibility: 'public',
-    text: postDescriptions + '\n#lastfm',
+    text: postDescriptions,
   })
 }

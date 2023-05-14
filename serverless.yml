@@ -13,7 +13,7 @@ functions:
     handler: index.handler
     events:
       # Invoke Lambda function every 2nd minute from Mon-Fri
-      - schedule: cron(0 0 ? * 2 *)
+      - schedule: cron(0 15 ? * 1 *)
     environment:
       LF_API_KEY: ${env:LF_API_KEY}
       MISSKEY_TOKEN: ${env:MISSKEY_TOKEN}

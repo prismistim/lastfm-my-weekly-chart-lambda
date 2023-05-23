@@ -29,7 +29,7 @@ export const handler = async () => {
     postDescriptions += `${track['@attr'].rank}: ${track.artist['#text']} - ${track.name} (${track.playcount})`
   })
 
-  postDescriptions += '\n[last.fm/Prismist-M](https://last.fm/user/prismist-m)\n#my_weekly_best_tracks #lastfm'
+  postDescriptions += '\nhttps://last.fm/user/Prismist-M\n#my_weekly_best_tracks #lastfm'
 
   const cli = new misskeyApi.APIClient({
     origin: 'https://misskey.io',

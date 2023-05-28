@@ -9,7 +9,7 @@ dotenv.config()
 export const handler = async () => {
   const res = await fetch(
     API_URL +
-      `?method=user.getweeklytrackchart&user=Prismist-M&api_key=${process.env['LF_API_KEY']}&format=json`
+      `?method=user.getweeklytrackchart&user=${process.env['LF_USERNAME']}&api_key=${process.env['LF_API_KEY']}&format=json`
   )
 
   const resJson: LastFmApiRes = await res.json()
@@ -29,10 +29,10 @@ export const handler = async () => {
     postDescriptions += `${track['@attr'].rank}: ${track.artist['#text']} - ${track.name} (${track.playcount})`
   })
 
-  postDescriptions += '\nhttps://last.fm/user/Prismist-M\n#my_weekly_best_tracks #lastfm'
+  postDescriptions += `\nhttps://last.fm/user/${process.env['LF_USERNAME']}\n#my_weekly_best_tracks #lastfm`
 
   const cli = new misskeyApi.APIClient({
-    origin: 'https://misskey.io',
+    origin: `https://${process.env['MISSKEY_ORIGIN']}`,
     credential: process.env['MISSKEY_TOKEN'],
   })
 

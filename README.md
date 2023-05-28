@@ -1,9 +1,8 @@
 # lastfm-my-weekly-chart-lambda
 
 ## これはなに
-- Last.fmに記録している snowsphere が聴いた曲の中で、1週間で聴いた上位5曲をSNSに投稿するためのもの
+- Last.fmにて記録した曲の中で、1週間で聴いた上位5曲をMisskeyに投稿するためのもの
 - 月曜の0時に投稿
-- 今のところ 投稿先は `misskey.io` のみ
 
 ## つかってるもの
 - Serverless Framework
@@ -15,6 +14,15 @@
 - Prettier
 - dotenv
 - misskey-js
+
+## 使い方
+1. プロジェクトのルートディレクトリに `.env` ファイルを作成する
+2. 以下の4つの環境変数を `.env` ファイル内に定義する
+  - `LF_USERNAME` Last.fm のユーザー名
+  - `LF_API_TOKEN` Last.fm のAPIトークン
+  - `MISSKEY_ORIGIN` 投稿先の Misskey サーバのドメイン
+  - `MISSKEY_TOKEN` 投稿先の Misskey サーバで発行したトークン
+3. 下記のメモを参考にデプロイする
 
 ## Serverless Frameworkのメモ
 

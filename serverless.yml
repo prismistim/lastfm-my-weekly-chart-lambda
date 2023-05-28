@@ -15,7 +15,9 @@ functions:
       # Invoke Lambda function every 2nd minute from Mon-Fri
       - schedule: cron(0 15 ? * 1 *)
     environment:
+      LF_USERNAME: ${env:LF_USERNAME}
       LF_API_KEY: ${env:LF_API_KEY}
+      MISSKEY_ORIGIN: ${env:MISSKEY_ORIGIN}
       MISSKEY_TOKEN: ${env:MISSKEY_TOKEN}
 custom:
   esbuild:
